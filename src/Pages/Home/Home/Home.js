@@ -1,13 +1,14 @@
 import React from 'react';
 import './Home.css'
 import Banner from './../Banner/Banner';
-import Inventory from './../Inventory/Inventory';
+import Inventory from '../Inventories/Inventories';
+import Inventories from '../Inventories/Inventories';
 
 const Home = () => {
     return (
         <div className='min-h-screen'>
             <Banner></Banner>
-            <Inventory></Inventory>
+            <Inventories></Inventories>
         </div>
     );
 };
