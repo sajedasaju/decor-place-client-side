@@ -11,7 +11,7 @@ const Inventories = () => {
     }, [])
     return (
         <div>
-            <h2>this is inventory</h2>
+            <h2 className='text-yellow-500 font-bold '>Inventory</h2>
             <div className='container lg:mx-auto xl:mx-auto 2xl:mx-auto md:mx-auto sm:mx-0 '>
                 <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  '>
                     {

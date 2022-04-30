@@ -7,6 +7,8 @@ import Inventories from './Pages/Home/Inventories/Inventories';
 import Inventory from './Pages/Home/Inventory/Inventory';
 import Blogs from './Pages/Blogs/Blogs';
 import InventoryDetail from './Pages/Home/InventoryDetail/InventoryDetail';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
 
 function App() {
   return (
@@ -15,10 +17,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/inventories' element={<Inventories></Inventories>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        {/* <Route path='/inventories' element={<Inventories></Inventories>}></Route> */}
+        <Route path='/inventory' element={<Inventories></Inventories>}></Route>
         <Route path='/inventory/:inventoryId' element={<InventoryDetail></InventoryDetail>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
 

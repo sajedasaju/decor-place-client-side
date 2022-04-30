@@ -51,7 +51,7 @@ const Header = () => {
                             <Link
                                 className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-yellow-500  hover: border-amber-900 
                             hover:border-b-2"
-                                as={Link} to="/inventory">
+                                as={Link} to="/home">
                                 Inventory
                             </Link>
                             <Link
@@ -63,7 +63,7 @@ const Header = () => {
                             <Link
                                 className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
                             hover:border-b-2"
-                                as={Link} to="/blog">
+                                as={Link} to="/blogs">
                                 Blog
                             </Link>
                             {/* {
