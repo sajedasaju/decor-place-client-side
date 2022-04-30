@@ -1,8 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Inventory = ({ inventory }) => {
-    const { _id, name, img, description, price } = inventory;
-    console.log(name)
+    const { _id, name, img, description, price, supplierName } = inventory;
+    const navigate = useNavigate();
+    const navigateToInventoryDetail = (id) => {
+        navigate(`/inventory/${id}`)
+    }
 
     return (
         <div class="card w-full bg-base-100 shadow-xl">
@@ -14,8 +18,11 @@ const Inventory = ({ inventory }) => {
                 </h2>
                 <p>{description}</p>
                 <div class="card-actions justify-end">
-                    <div class="badge badge-outline">Fashion</div>
-                    <div class="badge badge-outline">Products</div>
+                    <div class="badge badge-outline">{price}</div>
+                    <div class="badge badge-outline">{supplierName}</div>
+                </div>
+                <div>
+                    <button onClick={() => { navigateToInventoryDetail(_id) }} type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Update</button>
                 </div>
             </div>
         </div>
