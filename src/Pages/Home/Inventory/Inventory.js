@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Inventory.css'
 
 const Inventory = ({ inventory }) => {
     const { _id, name, img, description, price, supplierName } = inventory;
@@ -10,13 +11,14 @@ const Inventory = ({ inventory }) => {
 
     return (
         <div class="card w-full bg-base-100 shadow-lg drop-shadow-2xl ">
-            <figure><img src={img} alt="products" className='h-4/6	' /></figure>
+            <figure className='figure'><img src={img} alt="products" className='h-4/6	' /></figure>
             <div class="card-body h-4/6 pt-2">
                 <h2 class="card-title">
                     {name}
                     <div class="badge badge-secondary">NEW</div>
                 </h2>
-                <p>{description}</p>
+                <p className='pb-0 mb-0'>{description}
+                </p>
                 <div class="card-actions justify-end">
                     <div class="badge badge-outline">{price}</div>
                     <div class="badge badge-outline">{supplierName}</div>

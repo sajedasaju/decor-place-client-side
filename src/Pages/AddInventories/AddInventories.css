@@ -1,3 +1,6 @@
 .addInventory-container{
     min-height: 700px;
 }
+.borderName{
+    border: 1px solid 6B7280;
+}
