@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Inventory from '../Inventory/Inventory';
+import useInventories from './../../../hooks/useInventories';
+import Inventory from './../Inventory/Inventory';
 
 const Inventories = () => {
-    const [inventories, setInventories] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/inventory')
-            .then((response) => response.json())
-            .then((data) => setInventories(data));
-
-    }, [])
+    const [inventories, setInventories] = useInventories()
     return (
         <div>
             <h2 className='text-yellow-500 font-bold '>Inventory</h2>
@@ -16,9 +11,12 @@ const Inventories = () => {
                 <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  '>
                     {
                         inventories.slice(0, 6).map(inventory => <Inventory
+
                             key={inventory._id}
                             inventory={inventory}
-                        ></Inventory>)
+                        >
+
+                        </Inventory>)
                     }
                 </div>
             </div>

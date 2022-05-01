@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import hamburgerMenu from '../../../images/homeburg.png'
-import { Link } from 'react-router-dom';
+import cross from '../../../images/close-cross-delete.png'
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/logo/ceiling-lamp-gray.png'
 import logoName from '../../../images/logo/logo-removeb.png'
 import './Header.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../../firebase.init';
+import { signOut } from 'firebase/auth';
+import './Header.css'
 
 const Header = () => {
-    const [navbarOpen, setNavbarOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [user] = useAuthState(auth);
+
+    const hangleSignOut = () => {
+        signOut(auth);
+    }
 
     return (
-        <div className='bg-gray-200		'>
-            <nav className="relative flex flex-wrap items-center justify-between px-2 pt-2 nav-font">
-                <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div className='bg-gray-200'>
+            <nav className="flex justify-between flex-wrap px-2 pt-2 ">
+                <div className="container mx-auto px-4 flex  justify-between flex-wrap items-center mb-4">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <span
                             className="flex items-center"
@@ -23,75 +33,88 @@ const Header = () => {
 
                         </span>
                         <button
-                            className="inline-flex items-center justify-center p-2  text-white-600 lg:hidden"
+                            className="lg:hidden  p-2  "
                             type="button"
-                            onClick={() => setNavbarOpen(!navbarOpen)}
+                            onClick={() => setOpen(!open)}
                         >
-                            <img
-                                className="block w-10 h-10 ml-10"
-                                src={hamburgerMenu}
-                                alt=""
-                            />
+                            {
+                                open ? <img
+                                    className="block w-10 h-10 ml-10"
+                                    src={cross}
+                                    alt=""
+                                /> : <img
+                                    className="block w-10 h-10 ml-10"
+                                    src={hamburgerMenu}
+                                    alt=""
+                                />
+                            }
+
                         </button>
                     </div>
                     <div
-                        className={
+                        className=
+                        {
                             "lg:flex flex-grow items-center" +
-                            (navbarOpen ? " flex" : " hidden")
+                            (open ? " flex" : " hidden")
                         }
-                        id="example-navbar-danger"
                     >
-                        <div className="flex flex-col md:flex-row lg:flex-row lg:ml-auto lg:px-10 lg:text-md xl:text-ms 2xl:text-md sm:text-md md:text-sm ">
-                            <Link
-                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-yellow-500  hover: border-amber-900 
-                            hover:border-b-2"
+                        <div className="flex flex-col md:flex-row lg:flex-row lg:ml-auto lg:px-10 ">
+                            <NavLink
+                                className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2 mr-2"
+                                    :
+                                    "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
                                 as={Link} to="/home">
                                 Home
-                            </Link>
-                            <Link
-                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-yellow-500  hover: border-amber-900 
-                            hover:border-b-2"
+                            </NavLink>
+                            <NavLink
+                                className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                    :
+                                    "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
                                 as={Link} to="/home">
                                 Inventory
-                            </Link>
-                            <Link
-                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
-                            hover:border-b-2"
-                                as={Link} to="/About">
-                                About
-                            </Link>
-                            <Link
-                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
-                            hover:border-b-2"
+                            </NavLink>
+
+                            <NavLink
+                                className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                    :
+                                    "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
                                 as={Link} to="/blogs">
                                 Blog
-                            </Link>
-                            {/* {
+                            </NavLink>
+
+                            {
                                 user && <>
-                                    <Link as={Link} to='/addinventories' className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
-                            hover:border-b-2">Add Inventories</Link>
-                                    <Link as={Link} to="/manageinventories" className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
-                            hover:border-b-2" >Manage Inventories</Link>
-                                    <Link as={Link} to="/myinventory" className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
-                            hover:border-b-2">My Inventory</Link>
+                                    <NavLink as={Link} to='/addinventories' className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                        :
+                                        "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}>Add Inventories</NavLink>
+
+                                    <NavLink className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                        :
+                                        "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"} as={Link} to="/manageinventories"  >Manage Inventories</NavLink>
+                                    <NavLink
+                                        className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                            :
+                                            "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
+                                        as={Link} to="/myinventory" >My Inventory</NavLink>
                                 </>
-                            } */}
+                            }
 
 
-                            <Link className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900 mt-3"
-                                as={Link} to="/">
-                                <button type="button" className="
-                           border  border-amber-800 hover:bg-amber-700
-                           hover:text-white focus:ring-4 text-amber-900 font-medium rounded-lg text-md px-12 py-2 mr-2 mb-2">Logout</button>
-                            </Link>
-                            :
-                            <Link
-                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900 mt-3"
-                                as={Link} to="/login">
-                                <button type="button" className="
-                           border  border-amber-800 hover:bg-amber-700
-                           hover:text-white focus:ring-4 text-amber-900 font-medium rounded-lg text-md px-12 py-2 mr-2 mb-2">Login</button>
-                            </Link>
+                            {
+                                user ?
+                                    <NavLink className="nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold "
+                                        as={Link} to="/login">
+                                        <button onClick={hangleSignOut} type="button" className="px-6 py-2 font-bold bg-transparent rounded-lg
+                                         border-2  border-yellow-600 hover:bg-yellow-700  hover:text-white ">Logout</button>
+                                    </NavLink>
+                                    :
+                                    <NavLink
+                                        className="nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold "
+                                        as={Link} to="/login">
+                                        <button type="button" className="px-6 py-2 font-bold bg-transparent rounded-lg
+                                         border-2  border-yellow-600 hover:bg-yellow-700  hover:text-white  ">Login</button>
+                                    </NavLink>
+                            }
 
                         </div>
                     </div>
