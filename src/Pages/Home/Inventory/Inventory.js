@@ -9,9 +9,9 @@ const Inventory = ({ inventory }) => {
     }
 
     return (
-        <div class="card w-full bg-base-100 shadow-lg">
-            <figure><img src={img} alt="Shoes" /></figure>
-            <div class="card-body">
+        <div class="card w-full bg-base-100 shadow-lg drop-shadow-2xl ">
+            <figure><img src={img} alt="products" className='h-4/6	' /></figure>
+            <div class="card-body h-4/6 pt-2">
                 <h2 class="card-title">
                     {name}
                     <div class="badge badge-secondary">NEW</div>

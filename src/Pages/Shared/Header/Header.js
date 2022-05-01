@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import hamburgerMenu from '../../../images/homeburg.png'
-import cross from '../../../images/close-cross-delete.png'
+import hamburgerMenu from '../../../images/homeburg1.png'
+import cross from '../../../images/cross-icon.png'
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/logo/ceiling-lamp-gray.png'
 import logoName from '../../../images/logo/logo-removeb.png'
@@ -8,7 +8,7 @@ import './Header.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
 import { signOut } from 'firebase/auth';
-import './Header.css'
+
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -39,11 +39,11 @@ const Header = () => {
                         >
                             {
                                 open ? <img
-                                    className="block w-10 h-10 ml-10"
+                                    className="block w-8 h-8 ml-10"
                                     src={cross}
                                     alt=""
                                 /> : <img
-                                    className="block w-10 h-10 ml-10"
+                                    className="block w-8 h-8 ml-10"
                                     src={hamburgerMenu}
                                     alt=""
                                 />
@@ -95,7 +95,7 @@ const Header = () => {
                                         className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
                                             :
                                             "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
-                                        as={Link} to="/myinventory" >My Inventory</NavLink>
+                                        as={Link} to="/myInventories" >My Inventories</NavLink>
                                 </>
                             }
 
