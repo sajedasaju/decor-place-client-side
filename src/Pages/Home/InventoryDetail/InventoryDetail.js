@@ -4,9 +4,41 @@ import useInventoryDetail from './../../../hooks/useInventoryDetail';
 
 const InventoryDetail = () => {
     const { inventoryId } = useParams();
-    const [inventory] = useInventoryDetail(inventoryId);
+    const [inventory, setInventory] = useInventoryDetail(inventoryId);
+    const handleUpdateUser = (event) => {
+        console.log(event.target.id)
+        event.preventDefault();
+        let quantity
+        if (event.target.id === 'delivered') {
+            quantity = inventory.quantity - 1;
+        }
+        if (event.target.id === 'restock') {
+            const restokeQuantity = parseInt(event.target.quantity.value)
+            quantity = inventory.quantity + restokeQuantity;
+            console.log(event.target.quantity.value)
+        }
+
+        const updatedUser = { quantity };
+
+        //send data to the server
+        const url = `http://localhost:5000/inventory/${inventoryId}`
+        fetch(url, {
+            method: 'put',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                // alert("user added successfully!!")
+
+            })
+    }
     return (
-        <div class="container my-24 px-6 mx-auto">
+
+        <div class="container my-24 px-6 mx-auto" >
 
 
             <section class="mb-32 text-gray-800 text-center md:text-left">
@@ -82,21 +114,27 @@ const InventoryDetail = () => {
 
                                 </span>
                                 <div class="flex">
-                                    <span class="title-font font-medium text-2xl text-gray-900">${inventory.price}</span>
-                                    <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                                    <span class="title-font font-medium text-2xl text-gray-900 ml-5">${inventory.price}</span>
+
+                                    <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">{inventory.quantity}</button>
                                     <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                                         </svg>
                                     </button>
                                 </div>
-                                <button type="button"
+                                <button onClick={handleUpdateUser} type="button" id='delivered'
                                     class="inline-block px-7 py-3 bg-gray-800 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">
-                                    Buy now
+                                    Delivered
                                 </button>
                             </div>
                         </div>
                     </div>
+                    <form onSubmit={handleUpdateUser} id='restock'>
+                        <input type="number" placeholder='quantity' name='quantity' />
+                        <button type="submit"
+                            class="inline-block px-7 py-3 bg-gray-800 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Restock</button>
+                    </form>
                 </div>
             </section>
 
@@ -185,7 +223,7 @@ const InventoryDetail = () => {
                     </div>
                 </div>
             </section> */}
-        </div>
+        </div >
 
 
     );

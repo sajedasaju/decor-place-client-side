@@ -7,8 +7,8 @@ const useInventoryDetail = (inventoryId) => {
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
-    }, [inventoryId])
-    return [inventory];
+    }, [inventory])
+    return [inventory, setInventory];
 
 }
 export default useInventoryDetail;

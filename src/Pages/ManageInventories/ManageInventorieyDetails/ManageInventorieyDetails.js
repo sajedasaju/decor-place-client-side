@@ -1,6 +1,7 @@
 import React from 'react';
 import deleteIcon from '../../../images/delete-icon3.png'
 import './ManageInventorieyDetails.css'
+import { toast, ToastContainer } from 'react-toastify';
 //http://localhost:5000/inventory/626d718290d8be87ca5f2d5a
 
 const ManageInventorieyDetails = ({ inventory }) => {
@@ -12,7 +13,11 @@ const ManageInventorieyDetails = ({ inventory }) => {
                     method: "DELETE",
                 })
                 .then(res => res.json())
-                .then(data => console.log(data)
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast("Item Deleted")
+                    }
+                }
                 )
         }
 
@@ -41,6 +46,7 @@ const ManageInventorieyDetails = ({ inventory }) => {
                     <button onClick={() => { handleDelete(_id) }} class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><img className='deleteIcon' src={deleteIcon} alt="" /></button>
                 </td>
             </tr>
+            <ToastContainer></ToastContainer>
 
         </tbody>
 
