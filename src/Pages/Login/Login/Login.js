@@ -7,6 +7,8 @@ import auth from './../../../firebase.init';
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import logo from '../../../images/logo/ceiling-lamp-gray.png'
+import logoName from '../../../images/logo/logo-removeb.png'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -106,7 +108,17 @@ const Login = () => {
     return (
         <div className=' login-container flex flex-col justify-center border-solid rounded-md shadow-xl'>
             <form onSubmit={handleSubmit} className='max-w-[400px] w-full mx-auto bg-gray-300 p-8 px-8 rounded-lg'>
-                <h2 className='text-4xl text-white font-bold text-center'>SIGN IN</h2>
+                <span
+                    className="flex items-center justify-center"
+                >
+                    <h2 className='text-3xl text-white font-bold text-center '>SIGN IN</h2>
+                    <h2 className='text-2xl text-white font-bold text-center m-1'>to</h2>
+
+                    <Link to="/"><img src={logoName} alt="" className='mt-2' /></Link>
+
+
+
+                </span>
                 <div className='flex flex-col text-gray-400 py-2'>
 
                     <label>Email</label>

@@ -14,10 +14,11 @@ import AddInventories from './Pages/AddInventories/AddInventories';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import MyInventories from './Pages/MyInventories/MyInventories';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className='app-bg'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
