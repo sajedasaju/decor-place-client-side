@@ -1,12 +1,20 @@
-.banner{
-    background-image: url();
-    height: 60vh;
+
+.font-urbanist{
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.carouselImage{
+    background-image: url(https://wpbingosite.com/wordpress/funio/wp-content/uploads/2020/12/slider1-1-1.jpg);
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.472);
+    background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: overlay;
 }
 .get-started:hover{
     background-color: rgba(255, 255, 255, 0.185);
 
+}
+.bannerbtn{
+    background: linear-gradient(48deg, rgba(162,97,102,0.592874649859944) 100%, rgba(181,101,106,0.5564600840336135) 50%);
+    background: linear-gradient(48deg, rgba(162,97,102,0.8533788515406162) 15%, rgba(215,141,145,0.727608543417367) 72%);
 }

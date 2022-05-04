@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Banner.css'
-import banner1 from '../../../images/banner/banner5.jpg'
-import banner2 from '../../../images/banner/banner3.jpg'
-import banner3 from '../../../images/banner/banner4.jpg'
+import banner1 from '../../../images/banner/slide4.webp'
+import banner2 from '../../../images/banner/slide5.webp'
+import banner3 from '../../../images/banner/slode6.webp'
 
 const Banner = () => {
     return (
@@ -13,7 +13,7 @@ const Banner = () => {
             data-bs-ride="carousel"
         >
             {/* <!-- Indicators --> */}
-            <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4 ">
                 <button
                     data-bs-target="#carouselDarkVariant"
                     data-bs-slide-to="0"
@@ -39,13 +39,21 @@ const Banner = () => {
                 <div className="carousel-item active relative float-left w-full">
                     <img
                         src={banner1}
-                        className="block w-full"
+                        className="block w-full sm:h-max"
                         alt="Motorbike Smoke"
                     />
-                    <div className="absolute text-center top-40 inset-0 hidden md:block carousel-caption">
-                        <h5 className="text-white	 ">First slide label</h5>
-                        <p className="text-white	 ">Some representative placeholder content for the first slide.</p>
+                    <div className="absolute text-center  inset-0 hidden  md:block carousel-caption h-full w-1/2  ">
+                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist mt-10">Craft Your Dream Home</h5>
+
+                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">Explore More</button>
+
                     </div>
+
+                    {/* <div className="absolute text-center  inset-0  md:block carousel-caption w-1/3 bg-slate-300 ">
+                        <h1 className='text-black display-3  w-50'>Craft Your Dream Home</h1>
+                        <Link to='/blogs' className='btn  rounded-full px-2 get-started'>Buy</Link>
+                        
+                    </div> */}
                 </div>
 
 
@@ -56,10 +64,13 @@ const Banner = () => {
                         className="block w-full"
                         alt="Mountaintop"
                     />
-                    <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-xl">Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                    <div className="absolute text-center  inset-0 hidden  md:block carousel-caption w-1/2 mt-10">
+                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist">Make your days feeling comfy</h5>
+
+                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">Explore More</button>
+
                     </div>
+
                 </div>
 
                 {/* <!-- Single item --> */}
@@ -69,9 +80,11 @@ const Banner = () => {
                         className="block w-full"
                         alt="Woman Reading a Book"
                     />
-                    <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-xl">Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                    <div className="absolute text-center  inset-0 hidden  md:block carousel-caption w-1/2 mt-10">
+                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist">Make Your Interior More Minimalistic</h5>
+
+                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">View All</button>
+
                     </div>
                 </div>
             </div>
@@ -79,7 +92,7 @@ const Banner = () => {
 
             {/* <!-- Controls --> */}
             <button
-                className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0 invisible md:visible lg:visible xl:visible"
                 type="button"
                 data-bs-target="#carouselDarkVariant"
                 data-bs-slide="prev"
@@ -88,7 +101,7 @@ const Banner = () => {
                 <span className="visually-hidden">Previous</span>
             </button>
             <button
-                className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0 invisible md:visible lg:visible xl:visible"
                 type="button"
                 data-bs-target="#carouselDarkVariant"
                 data-bs-slide="next"

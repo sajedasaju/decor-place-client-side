@@ -3,28 +3,29 @@ import './MyInventorieyDetails.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
 import { Link } from 'react-router-dom';
-import deleteIcon from '../../../images/delete-icon3.png'
-import { toast } from 'react-toastify';
+import deleteIcon from '../../../images/icons/cross-icon.png'
+import { toast, ToastContainer } from 'react-toastify';
+import handleDelete from '../../../hooks/handleDelete';
 
 const MyInventorieyDetails = ({ inventory }) => {
     const [user] = useAuthState(auth);
-    const handleDelete = (id) => {
-        const proceed = window.confirm("Want to Delete?")
-        if (proceed) {
-            fetch(`http://localhost:5000/inventory/${id}`,
-                {
-                    method: "DELETE",
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        toast("Your Item Deleted")
-                    }
-                }
-                )
-        }
+    // const handleDelete = (id) => {
+    //     const proceed = window.confirm("Want to Delete?")
+    //     if (proceed) {
+    //         fetch(`http://localhost:5000/inventory/${id}`,
+    //             {
+    //                 method: "DELETE",
+    //             })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 if (data.deletedCount > 0) {
+    //                     toast("Your Item Deleted")
+    //                 }
+    //             }
+    //             )
+    //     }
 
-    }
+    // }
     return (
         <div className="max-w-2xl mx-auto mb-2">
 
@@ -39,20 +40,21 @@ const MyInventorieyDetails = ({ inventory }) => {
                     <ul className="divide-y divide-gray-200 dark:divide-gray-700">
 
                         <li className="pt-3 pb-0 sm:pt-4">
-                            <div className="flex  justify-between flex-col md:flex-row  lg:flex-row xl:flex-row justify-center items-center">
-                                <div className='flex flex-col md:flex-row  lg:flex-row xl:flex-row  items-center'>
+                            <div className="flex  justify-between flex-col md:flex-row  lg:flex-row xl:flex-row justify-center items-center gap-2 ">
+                                <div className='flex flex-col md:flex-row  lg:flex-row xl:flex-row  items-center flex-wrap'>
                                     <div className="flex-shrink-0">
                                         <img className="w-20 h-20 rounded-full mr-3" alt='img' src={inventory.img} />
 
                                     </div>
-                                    <div className="flex flex-col justify-between flex-row sm:flex-col  items-center md:items-start lg:items-start xl:items-start ">
+                                    <div className="flex  flex-wrap
+                                     justify-between flex-col  items-center md:items-start lg:items-start xl:items-start ">
                                         <p className="text-md font-medium text-gray-900 truncate dark:text-white">
                                             Supplier:<span>{inventory.supplierName}</span>
                                         </p>
                                         <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                                             {user.email}
                                         </p>
-                                        <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                        <p className="text-sm text-gray-500  dark:text-gray-400 break-all ">
                                             {inventory.description}
                                         </p>
                                         <p className=" text-sm font-bold text-gray-900 dark:text-white">
@@ -72,6 +74,8 @@ const MyInventorieyDetails = ({ inventory }) => {
                     </ul>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
+
 
         </div>
 

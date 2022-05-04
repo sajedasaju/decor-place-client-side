@@ -3,12 +3,14 @@ import './Home.css'
 import Banner from './../Banner/Banner';
 import Inventory from '../Inventories/Inventories';
 import Inventories from '../Inventories/Inventories';
+import SearchSection from '../SearchSection/SearchSection';
 
 const Home = () => {
     return (
         <div className='min-h-screen'>
             <Banner></Banner>
             <Inventories></Inventories>
+            <SearchSection></SearchSection>
             <div className="infocardContainer">
                 <div id="main">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Dog_coat_variation.png"></img>

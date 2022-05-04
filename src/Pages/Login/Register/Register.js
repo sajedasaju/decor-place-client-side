@@ -82,6 +82,7 @@ const Register = () => {
     }
     useEffect(() => {
         if (hookError) {
+
             if (hookError?.code === 'auth/invalid-email') {
                 toast("Invalid email provided, please provide a valid email");
             }
@@ -93,6 +94,9 @@ const Register = () => {
             }
             else if (hookError.code === 'auth/internal-error') {
                 toast("Internal Error.");
+            }
+            else {
+                toast.error(`${hookError?.message}`)
             }
 
         }
@@ -124,7 +128,7 @@ const Register = () => {
 
                 <div className='flex flex-col text-gray-400 py-2'>
                     <label>Confirm Password</label>
-                    <input onChange={handleConfirmPasswordChange} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="confirm-password" id="password" placeholder='confirm-password' required />
+                    <input onChange={handleConfirmPasswordChange} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="confirm-password" id="confirm-password" placeholder='confirm-password' required />
 
                 </div>
                 {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}

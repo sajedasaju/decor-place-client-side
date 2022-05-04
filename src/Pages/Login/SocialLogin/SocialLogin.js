@@ -7,19 +7,20 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SocialLogin = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
 
-    if (user) {
+    if (googleUser) {
         navigate('/')
     }
     useEffect(() => {
-        if (error) {
-            toast.error(`${error?.message}`)
+
+        if (googleError) {
+            toast.error(`${googleError?.message}`)
 
         }
 
-    }, [error])
+    }, [googleError])
 
     return (
         <div>
