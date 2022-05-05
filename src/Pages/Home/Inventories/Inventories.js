@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Inventories = () => {
     const [inventories, setInventories] = useInventories()
+    // console.log("from inventories")
+    // console.log(inventories)
     return (
         <div className='mb-10 '>
 

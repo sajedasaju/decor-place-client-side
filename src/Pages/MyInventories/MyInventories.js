@@ -5,16 +5,28 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import Inventory from './../Home/Inventory/Inventory';
 import MyInventorieyDetails from './MyInventorieyDetails/MyInventorieyDetails';
+import axios from 'axios';
 
 const MyInventories = () => {
     const [user] = useAuthState(auth)
     const [inventories, setInventories] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory?email=${user.email}`)
-            .then((response) => response.json())
-            .then((data) => setInventories(data));
+        const getMyInventory = async () => {
+            const email = user.email;
+            const url = `http://localhost:5000/inventory?email=${user.email}`;
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            setInventories(data);
+        }
+        getMyInventory();
+        // fetch(`http://localhost:5000/inventory?email=${user.email}`)
+        //     .then((response) => response.json())
+        //     .then((data) => setInventories(data));
 
-    }, [inventories])
+    }, [user, inventories])
     return (
         <div className='myInventoriesContainer '>
             <h2 className='font-bold text-center text-[#C39A31]'>MyInventories</h2>
