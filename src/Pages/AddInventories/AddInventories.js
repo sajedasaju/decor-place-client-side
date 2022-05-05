@@ -9,7 +9,7 @@ const AddInventories = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         const url = 'http://localhost:5000/inventory';
         fetch(url, {
             method: 'post',
@@ -24,7 +24,13 @@ const AddInventories = () => {
                     toast("Item Added Successfully")
                 }
             })
-        console.log(data)
+        // console.log(e.target[1].value)
+        e.target[1].value = '';
+        e.target[2].value = '';
+        e.target[3].value = '';
+        e.target[4].value = '';
+        e.target[5].value = '';
+        e.target[6].value = '';
     }
 
     return (

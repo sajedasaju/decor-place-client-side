@@ -16,7 +16,7 @@ const Inventory = ({ inventory }) => {
 
             <img className="aspect-video w-full rounded-t-2xl object-contain object-center" src={inventory.img} alt='inventory' />
 
-            <div className="p-4">
+            <div className="p-4 break-all">
                 <small className="text-blue-400 text-xs">Supplier:{inventory.supplierName}</small>
                 <h1 className="text-2xl font-medium text-slate-600 pb-2">{inventory.name}</h1>
                 <p className="text-sm tracking-tight font-light text-slate-400 leading-6 ">{inventory.description.length > 150 ? inventory.description.slice(0, 150) + '....' : inventory.description} </p>

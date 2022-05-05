@@ -9,6 +9,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../../../images/logo/ceiling-lamp-gray.png'
 import logoName from '../../../images/logo/logo-removeb.png'
+import axios from 'axios';
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -38,7 +40,7 @@ const Login = () => {
 
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
     const handleEmailChange = (event) => {
@@ -68,9 +70,16 @@ const Login = () => {
         }
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
-        signInWithEmailAndPassword(userInfo.email, userInfo.password)
+        const email = userInfo.email;
+        // console.log(email)
+        await signInWithEmailAndPassword(userInfo.email, userInfo.password)
+        await signInWithEmailAndPassword(userInfo.email, userInfo.password)
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+        // console.log(data)
     }
     const resetPassword = async () => {
 
