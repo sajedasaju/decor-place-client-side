@@ -18,7 +18,7 @@ const Login = () => {
     const navigateRegister = () => {
         navigate('/register')
     }
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/home";
 
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -75,10 +75,10 @@ const Login = () => {
         const email = userInfo.email;
         // console.log(email)
         await signInWithEmailAndPassword(userInfo.email, userInfo.password)
-        await signInWithEmailAndPassword(userInfo.email, userInfo.password)
+        navigate(from, { replace: true });
         const { data } = await axios.post('http://localhost:5000/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
+        // navigate('/')
         // console.log(data)
     }
     const resetPassword = async () => {
@@ -115,51 +115,55 @@ const Login = () => {
     }, [hookError])
 
     return (
-        <div className=' login-container flex flex-col justify-center border-solid rounded-md shadow-xl'>
-            <form onSubmit={handleSubmit} className='max-w-[400px] w-full mx-auto bg-gray-300 p-8 px-8 rounded-lg'>
-                <span
-                    className="flex items-center justify-center"
-                >
-                    <h2 className='text-3xl text-white font-bold text-center '>SIGN IN</h2>
-                    <h2 className='text-2xl text-white font-bold text-center m-1'>to</h2>
-
-                    <Link to="/"><img src={logoName} alt="" className='mt-2' /></Link>
+        <>
 
 
+            <div className=' login-container flex flex-col justify-center border-solid rounded-md shadow-xl'>
+                <form onSubmit={handleSubmit} className='max-w-[400px] w-full mx-auto bg-gray-300 p-8 px-8 rounded-lg'>
+                    <span
+                        className="flex items-center justify-center"
+                    >
+                        <h2 className='text-3xl text-white font-bold text-center '>SIGN IN</h2>
+                        <h2 className='text-2xl text-white font-bold text-center m-1'>to</h2>
 
-                </span>
-                <div className='flex flex-col text-gray-400 py-2'>
-
-                    <label>Email</label>
-                    <input onChange={handleEmailChange} className='rounded-lg bg-gray-200 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="email" name="email" id="email" placeholder='email' />
-                    {errors?.emailError && <p className='error-message'>{errors.emailError}</p>}
+                        <Link to="/"><img src={logoName} alt="" className='mt-2' /></Link>
 
 
-                </div>
-                <div className='flex flex-col text-gray-400 py-2'>
-                    <label>Password</label>
-                    <input onChange={handlePasswordChange} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="password" id="password" placeholder='Password' required />
-                    {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}
 
-                </div>
-                <div className='flex justify-between text-gray-400 py-2'>
-                    <p className='flex items-center'><input className='mr-2' type="checkbox" />Remember me</p>
-                    <Link to='/login' onClick={resetPassword}>Forget password?</Link>
-                </div>
-                <div className='flex justify-between text-gray-400 py-2'>
-                    <div className='flex justify-between text-gray-400 py-2'>
-                        <p>New to Decor Place?</p>
-                        <Link to='/register' onClick={navigateRegister} className='text-primary pe-auto text-decoration-none'>Please Register</Link>
+                    </span>
+                    <div className='flex flex-col text-gray-400 py-2'>
+
+                        <label>Email</label>
+                        <input onChange={handleEmailChange} className='rounded-lg bg-gray-200 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="email" name="email" id="email" placeholder='email' />
+                        {errors?.emailError && <p className='error-message'>{errors.emailError}</p>}
+
 
                     </div>
+                    <div className='flex flex-col text-gray-400 py-2'>
+                        <label>Password</label>
+                        <input onChange={handlePasswordChange} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="password" id="password" placeholder='Password' required />
+                        {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}
 
-                </div>
-                <ToastContainer />
-                <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 rounded text-white'>Sign in</button>
-                <SocialLogin></SocialLogin>
+                    </div>
+                    <div className='flex justify-between text-gray-400 py-2'>
+                        <p className='flex items-center'><input className='mr-2' type="checkbox" />Remember me</p>
+                        <Link to='/login' onClick={resetPassword}>Forget password?</Link>
+                    </div>
+                    <div className='flex justify-between text-gray-400 py-2'>
+                        <div className='flex justify-between text-gray-400 py-2'>
+                            <p>New to Decor Place?</p>
+                            <Link to='/register' onClick={navigateRegister} className='text-primary pe-auto text-decoration-none'>Please Register</Link>
 
-            </form>
-        </div>
+                        </div>
+
+                    </div>
+                    <ToastContainer />
+                    <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 rounded text-white'>Sign in</button>
+                    <SocialLogin></SocialLogin>
+
+                </form>
+            </div>
+        </>
 
     );
 };

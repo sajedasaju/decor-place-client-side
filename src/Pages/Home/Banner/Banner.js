@@ -43,17 +43,13 @@ const Banner = () => {
                         alt="Motorbike Smoke"
                     />
                     <div className="absolute text-center  inset-0 hidden  md:block carousel-caption h-full w-1/2  ">
-                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist mt-10">Craft Your Dream Home</h5>
+                        <h5 className="text-4xl	 font-bold font-mono text-[#C47803] mt-10">Craft Your Dream Home</h5>
 
-                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">Explore More</button>
+                        <button className=" px-8 py-2 text-lg  font-medium   text-white rounded hover:shadow-2xl hover:bg-[#81854b] bannerbtn mt-4 border-none opacity-100   shadow-2xl shadow-black bg-[#BABE74]">Explore More</button>
 
                     </div>
 
-                    {/* <div className="absolute text-center  inset-0  md:block carousel-caption w-1/3 bg-slate-300 ">
-                        <h1 className='text-black display-3  w-50'>Craft Your Dream Home</h1>
-                        <Link to='/blogs' className='btn  rounded-full px-2 get-started'>Buy</Link>
-                        
-                    </div> */}
+
                 </div>
 
 
@@ -65,9 +61,9 @@ const Banner = () => {
                         alt="Mountaintop"
                     />
                     <div className="absolute text-center  inset-0 hidden  md:block carousel-caption w-1/2 mt-10">
-                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist">Make your days feeling comfy</h5>
+                        <h5 className="text-4xl	 font-bold font-mono		 text-[#C47803] font-urbanist">Make your days feeling comfy</h5>
 
-                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">Explore More</button>
+                        <button className=" px-8 py-2 text-lg  font-medium tracking-wider rounded text-white hover:shadow-2xl hover:bg-[#87c4d4] bannerbtn mt-4 border-none opacity-100  shadow-2xl shadow-black bg-[#7cbaca]">Explore More</button>
 
                     </div>
 
@@ -81,9 +77,9 @@ const Banner = () => {
                         alt="Woman Reading a Book"
                     />
                     <div className="absolute text-center  inset-0 hidden  md:block carousel-caption w-1/2 mt-10">
-                        <h5 className="text-3xl	 font-extrabold	 text-[#C47803] font-urbanist">Make Your Interior More Minimalistic</h5>
+                        <h5 className="text-4xl	 font-bold font-mono text-[#C47803] font-urbanist">Make Your Interior More Minimalistic</h5>
 
-                        <button class="bg-red-400 px-8 py-2 text-medium shadow-sm font-medium tracking-wider  text-white rounded hover:shadow-2xl hover:bg-red-400 bannerbtn mt-4">View All</button>
+                        <button className=" px-8 py-2 text-lg  font-medium tracking-wider  rounded text-white hover:shadow-2xl hover:bg-[#fdb4a0] bannerbtn mt-4 border-none opacity-100  shadow-2xl shadow-black bg-[#ffc3b3]">View All</button>
 
                     </div>
                 </div>

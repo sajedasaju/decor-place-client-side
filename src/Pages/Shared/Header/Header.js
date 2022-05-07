@@ -19,7 +19,7 @@ const Header = () => {
     }
 
     return (
-        <div className='bg-gray-200'>
+        <div className='bg-[#dadadad3]'>
             <nav className="flex justify-between flex-wrap px-2 pt-2 ">
                 <div className="container mx-auto px-4 flex  justify-between flex-wrap items-center ">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">

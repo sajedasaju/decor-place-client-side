@@ -1,7 +1,7 @@
 
-.font-urbanist{
+/* .font-urbanist{
     font-family: 'Oleo Script Swash Caps', cursive;
-}
+} */
 .carouselImage{
     background-image: url(https://wpbingosite.com/wordpress/funio/wp-content/uploads/2020/12/slider1-1-1.jpg);
     height: 100%;
@@ -15,6 +15,8 @@
 
 }
 .bannerbtn{
-    background: linear-gradient(48deg, rgba(162,97,102,0.592874649859944) 100%, rgba(181,101,106,0.5564600840336135) 50%);
-    background: linear-gradient(48deg, rgba(162,97,102,0.8533788515406162) 15%, rgba(215,141,145,0.727608543417367) 72%);
+    /* background: transparent; */
+    /* border: 2px solid black ; */
+    /* background: linear-gradient(48deg, rgba(162,97,102,0.8533788515406162) 15%, rgba(215,141,145,0.727608543417367) 72%); */
+    border-radius: 20px;
 }

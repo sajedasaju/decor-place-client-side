@@ -24,15 +24,15 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <div className='flex items-center justify-center'>
-                <div style={{ height: '1px' }} className='bg-teal-500	 w-1/2'></div>
-                <p className='mt-2 px-2 text-white'>OR</p>
-                <div style={{ height: '1px' }} className='bg-teal-500	 w-1/2'></div>
+            <div className='flex items-center justify-center mt-1'>
+                <div style={{ height: '1px' }} className='bg-[#B8880B]	 w-1/2'></div>
+                <p className=' px-2 text-black'>OR</p>
+                <div style={{ height: '1px' }} className='bg-[#B8880B]	 w-1/2'></div>
             </div>
 
 
             <div>
-                <button onClick={() => signInWithGoogle()} className='mt-0 w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 rounded text-white flex items-center justify-center mt-5'  >
+                <button onClick={() => signInWithGoogle()} className=' hover:shadow-gray-500/40 rounded text-white flex items-center justify-center mt-5 transition duration-500 bg-orange-400 hover:bg-orange-400/75 text-white font-bold py-1 px-4 rounded focus:outline-none w-full focus:shadow-outline'  >
                     <img style={{ width: '30px' }} src={google} alt="" />
                     <span className='px-2'>Google Sign In</span>
                 </button>

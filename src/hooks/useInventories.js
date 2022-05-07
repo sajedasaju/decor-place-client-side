@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const useInventories = () => {
     const [inventories, setInventories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://afternoon-fjord-70162.herokuapp.com/inventory')
             .then((response) => response.json())
             .then((data) => {
 

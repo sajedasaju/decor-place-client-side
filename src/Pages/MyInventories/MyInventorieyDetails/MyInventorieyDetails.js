@@ -12,7 +12,7 @@ const MyInventorieyDetails = ({ inventory }) => {
     // const handleDelete = (id) => {
     //     const proceed = window.confirm("Want to Delete?")
     //     if (proceed) {
-    //         fetch(`http://localhost:5000/inventory/${id}`,
+    //         fetch(`https://afternoon-fjord-70162.herokuapp.com/inventory/${id}`,
     //             {
     //                 method: "DELETE",
     //             })
@@ -27,11 +27,11 @@ const MyInventorieyDetails = ({ inventory }) => {
 
     // }
     return (
-        <div className="max-w-2xl mx-auto mb-2">
+        <div className="lg:w-3/5 md:w-4/5 sm:w-full mx-auto mb-2">
 
-            <div className="p-4 max-w-4/6 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xl font-bold leading-none text-gray-900 dark:text-white">{inventory.name}</h3>
+            <div className="p-4 max-w-5/6 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <div className="flex justify-between items-center mb-4 gap-2">
+                    <h3 className="text-xl font-bold leading-none text-gray-900 dark:text-white break-all">{inventory.name}</h3>
                     <Link to={`/inventory/${inventory._id}`} className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                         Details
                     </Link>
@@ -52,7 +52,7 @@ const MyInventorieyDetails = ({ inventory }) => {
                                             Supplier:<span>{inventory.supplierName}</span>
                                         </p>
                                         <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                            {user.email}
+                                            {inventory.email}
                                         </p>
                                         <p className="text-sm text-gray-500  dark:text-gray-400 break-all ">
                                             {inventory.description}

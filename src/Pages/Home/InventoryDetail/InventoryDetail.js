@@ -9,7 +9,7 @@ const InventoryDetail = () => {
     const handleUpdateUser = (event) => {
         // console.log(event.target.id)
         event.preventDefault();
-        let quantity = inventory.quantity
+        let quantity = parseInt(inventory.quantity)
         if (event.target.id === 'delivered') {
             quantity -= 1;
         }
@@ -24,7 +24,7 @@ const InventoryDetail = () => {
         const updatedUser = { quantity };
 
         //send data to the server
-        const url = `http://localhost:5000/inventory/${inventoryId}`
+        const url = `https://afternoon-fjord-70162.herokuapp.com/inventory/${inventoryId}`
         fetch(url, {
             method: 'put',
             headers: {
@@ -90,10 +90,10 @@ const InventoryDetail = () => {
 
 
                             </div>
-                            <form onSubmit={handleUpdateUser} id='restock' className='flex items-center justify-center'>
-                                <input type="number" placeholder='quantity' name='quantity' className='w-40' />
+                            <form onSubmit={handleUpdateUser} id='restock' className='flex items-center justify-center w-full'>
+                                <input type="number" placeholder='quantity' name='quantity' className='md:w-80 lg:w-80 w-40' />
                                 <button type="submit"
-                                    className="inline-block px-4 py-3 bg-gray-800 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Restock</button>
+                                    className="inline-block px-7 py-3 bg-gray-800 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out focus:outline-none focus:ring-0 ">Restock</button>
                             </form>
                         </div>
                     </div>

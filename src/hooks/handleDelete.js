@@ -3,7 +3,7 @@ const handleDelete = (id) => {
 
     const proceed = window.confirm("Want to Delete?")
     if (proceed) {
-        fetch(`http://localhost:5000/inventory/${id}`,
+        fetch(`https://afternoon-fjord-70162.herokuapp.com/inventory/${id}`,
             {
                 method: "DELETE",
             })
