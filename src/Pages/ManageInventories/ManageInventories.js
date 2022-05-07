@@ -16,13 +16,13 @@ const ManageInventories = () => {
             <table className="border-collapse w-full mx-auto ">
                 <thead className='border-t-6 border-slate-700 rounded-xl'>
                     <tr>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Inventory Image</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Inventory name</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Description</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Price</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Quantity</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Supplier</th>
-                        <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Actions</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Inventory Image</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Inventory name</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Description</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Price</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Quantity</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Supplier</th>
+                        <th className="p-3 font-bold uppercase bg-gray-200 text-[#52828e]  border border-gray-300 hidden lg:table-cell">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +41,7 @@ const ManageInventories = () => {
 
 
             <div div className='flex items-end mr-3 mt-4  bg-transparentt' >
-                <button onClick={navigateToAddInventory} className=" ml-auto inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-[#FEC165] rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-[#FEC165] dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                <button onClick={navigateToAddInventory} className=" dark:focus:ring-yellow-800 ml-auto inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-[#F6993F] rounded-lg   focus:ring-4 focus:outline-none focus:ring-yellow-300 hover:bg-[#dc9d40] dark:hover:bg-yellow-500 hover:scale-110 transition duration-150 ease-out hover:ease-in">
                     <img src={cartIcon} className="mr-2 -ml-1 w-6 h-6" />
                     Add Inventory
 

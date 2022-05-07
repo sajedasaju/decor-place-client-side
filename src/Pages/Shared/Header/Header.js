@@ -19,7 +19,7 @@ const Header = () => {
     }
 
     return (
-        <div className='bg-[#dadadad3]'>
+        <div className='bg-[#dadadad3] sticky top-0 z-50	 '>
             <nav className="flex justify-between flex-wrap px-2 pt-2 ">
                 <div className="container mx-auto px-4 flex  justify-between flex-wrap items-center ">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -106,6 +106,7 @@ const Header = () => {
                                         as={Link} to="/login">
                                         <button onClick={hangleSignOut} type="button" className="px-6 py-2 font-bold bg-transparent rounded-lg
                                          border-2  border-yellow-600 hover:bg-yellow-700  hover:text-white ">Logout</button>
+
                                     </NavLink>
                                     :
                                     <NavLink

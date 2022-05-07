@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Banner.css'
-import banner1 from '../../../images/banner/slide4.webp'
-import banner2 from '../../../images/banner/slide5.webp'
-import banner3 from '../../../images/banner/slode6.webp'
 
 const Banner = () => {
     return (
@@ -38,7 +35,7 @@ const Banner = () => {
                 {/* <!-- Single item --> */}
                 <div className="carousel-item active relative float-left w-full">
                     <img
-                        src={banner1}
+                        src='https://i.ibb.co/ggbTTYN/slide4.webp'
                         className="block w-full sm:h-max"
                         alt="Motorbike Smoke"
                     />
@@ -56,7 +53,7 @@ const Banner = () => {
                 {/* <!-- Single item --> */}
                 <div className="carousel-item relative float-left w-full">
                     <img
-                        src={banner2}
+                        src='https://i.ibb.co/3MgCK0y/slide5.webp'
                         className="block w-full"
                         alt="Mountaintop"
                     />
@@ -72,7 +69,7 @@ const Banner = () => {
                 {/* <!-- Single item --> */}
                 <div className="carousel-item relative float-left w-full">
                     <img
-                        src={banner3}
+                        src='https://i.ibb.co/NndJTPP/slode6.webp'
                         className="block w-full"
                         alt="Woman Reading a Book"
                     />

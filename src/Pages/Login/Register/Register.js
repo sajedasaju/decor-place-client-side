@@ -6,6 +6,7 @@ import auth from './../../../firebase.init';
 import Loading from './../../Shared/Loading/Loading';
 import { toast, ToastContainer } from 'react-toastify';
 import logoName from '../../../images/logo/logo-removeb.png'
+import './Register.css'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -112,11 +113,11 @@ const Register = () => {
     return (
         <>
 
-            <div className="mx-auto lg:w-4/6 container flex items-center  rounded" id="nav">
+            <div className="mx-auto lg:w-4/6 container flex items-center  rounded registerContainer" id="nav">
                 <div className="w-full pt-2 p-4 ">
 
                     <div className="mx-auto md:p-6 md:w-1/2  shadow-2xl bg-gray-200 rounded-lg">
-                        <div className="flex flex-wrap justify-between items-center">
+                        <div className="flex flex-wrap justify-between items-center mb-3">
                             <div className='flex justify-center items-center'>
                                 <h1 className="text-2xl text-gray-500 hover:text-amber-700 transition duration-500 ">
                                     <i className="fas fa-sign-in-alt fa-fw fa-lg"></i>
@@ -149,7 +150,7 @@ const Register = () => {
                                     {/* <strong className="text-red-500 text-xs italic">username is require</strong> */}
                                 </div>
 
-                                <div className="mb-8">
+                                <div className="mb-4">
                                     <label for="password" className="block text-gray-700 text-sm font-bold mb-2">
                                         <span className="text-red-500">&nbsp;*</span>
                                         Password

@@ -29,23 +29,26 @@ const SearchSection = () => {
             <div className="w-full relative flex items-center justify-center">
                 <img src={banner1} alt="dining" className="w-full h-full absolute z-0 block xl:block" />
 
-                <div className="bg-gray-300 bg-opacity-30 md:my-16 lg:py-16 py-10 w-full md:mx-24 md:px-12 px-4 flex flex-col items-center justify-center relative z-40">
-                    <h1 className="text-4xl font-semibold leading-9 text-white text-center">Don’t miss out!</h1>
+                <div className="bg-gray-300 bg-opacity-30 md:my-16 lg:py-5 py-5 w-full md:mx-24 md:px-12 px-4 flex flex-col items-center justify-center relative z-40">
+                    <h1 className="text-4xl font-semibold  text-white text-center">Don’t miss out!</h1>
                     <p className="text-base leading-normal text-center text-white mt-6">
                         Subscribe to your newsletter to stay in the loop. Our newsletter is sent once in <br />
                         a week on every friday so subscribe to get latest news and updates.
                     </p>
-                    <div className="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-12 space-y-4 sm:space-y-0">
+                    {/* <div className="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-12 space-y-4 sm:space-y-0">
                         <input className="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white" placeholder="Email Address" />
                         <button className="focus:outline-none focus:ring-offset-2 focus:ring border border-white sm:border-transparent w-full sm:w-auto bg-white py-4 px-6 hover:bg-opacity-75">Subscribe</button>
-                    </div>
-                    <div className='w-full mx-auto '>
+                    </div> */}
+                    <div className='w-4/6 mx-auto '>
                         <div className="form-control">
                             <form className="input-group justify-center" onSubmit={handleSearch} >
-                                <input type="text" placeholder="Search…" className="input input-bordered" name='searchText' defaultValue='Double Sofa' />
-                                <button className="btn btn-square">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                                </button>
+                                <div className="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-6 space-y-2 sm:space-y-0">
+                                    <input className="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white px-4 py-2focus:outline-none bg-transparent placeholder-white" name='searchText' defaultValue='Double Sofa' />
+                                    {/* <input type="text" placeholder="Search…" className="input input-bordered" name='searchText' defaultValue='Double Sofa' /> */}
+                                    <button className="btn btn-square bg-[#dfdedec6] my-4 border-2 border-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
