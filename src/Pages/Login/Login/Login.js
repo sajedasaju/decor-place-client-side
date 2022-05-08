@@ -94,7 +94,7 @@ const Login = () => {
         const email = userInfo.email;
         // console.log(email)
         await signInWithEmailAndPassword(userInfo.email, userInfo.password)
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://afternoon-fjord-70162.herokuapp.com/inventory/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
         // navigate('/')
         // console.log(data)
