@@ -11,7 +11,7 @@ const SearchSection = () => {
 
         if (queryText) {
 
-            fetch(`http://localhost:5000/inventory?name=${queryText}`)
+            fetch(`https://afternoon-fjord-70162.herokuapp.com/inventory/?name=${queryText}`)
                 .then(res => res.json())
                 .then(data => setInventories(data))
 
