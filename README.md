@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Decor Place
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Link [Decor Place](https://decor-place.web.app/).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Decor Place is base on Furniture management.
+- Its contains Header,Footer,(Header and Footer are common for all other pages) Home,Blogs,Add Inventory,Manage Inventory,and also My Inventory route.
 
-### `npm start`
+* In header its contain logo and logo name, home,blogs,login, route link (they are public route) and manage inventory,add inventory and my inventory (are private route)
+* In home page there contain a carousel banner, then its showing only 6 inventory from database,and also there contain two extra section.
+* In blogs pages there contain Q/A .
+* Login and Register page contain user authentication ,and google login.If user logged in he/she can see the private route,and can manage(delete,update quantity,restock quantity) inventories
+* In add inventory logged in person can add inventories
+* In manage pages logged in per son can see all inventory and can delete them.
+* In my inventory logged person can see only his/her inventories which he added before.
+* In Home page one section contain search bar,user can search inventory by inventories name.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Used Frameworks and Libraries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Tailwind
+- Axios
+- Tailwind component(Daisyui,Flowbite,Tailwind Elements)
+- React Toastify
+- React firebase hooks
+- React Router
+- Firebase
+- Vanilla CSS
