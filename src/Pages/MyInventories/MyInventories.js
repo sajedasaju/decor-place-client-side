@@ -10,7 +10,6 @@ import star from '../../images/icons/star.png'
 
 const MyInventories = () => {
     const [user] = useAuthState(auth)
-    console.log(user)
     const [inventories, setInventories] = useState([]);
     useEffect(() => {
         const getMyInventory = async () => {

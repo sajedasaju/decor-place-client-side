@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ShowSingleSearchSection = ({ inventory }) => {
-    console.log("heeeee", inventory)
     const navigate = useNavigate();
     const navigateToInventoryDetail = (id) => {
         navigate(`/inventory/${id}`)

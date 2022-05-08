@@ -25,7 +25,12 @@ const Inventory = ({ inventory }) => {
 
                     <div className='flex justify-between items-center'>
                         <span className="block bg-gray-100 rounded-full  font-bold px-3 py-2 leading-none flex items-center text-[#52828e] text-lg">$68.50</span>
-                        <h2 className='block bg-gray-100 rounded-full  font-bold px-3 py-2 leading-none flex items-center text-[#52828e] text-lg'>Quantity:{inventory.quantity}</h2>
+                        <h2 className='block bg-gray-100 rounded-full  font-bold px-3 py-2 leading-none flex items-center text-[#52828e] text-lg justify-center'>
+                            Quantity:
+                            {
+                                inventory.quantity <= 0 ? <h2 className='text-red-700 text-sm pt-1 break-words'>Stock Out</h2> : inventory.quantity
+                            }
+                        </h2>
 
                     </div>
                     <div className="p-1  mt-2 text-center space-x-1 space-y-2 w-full mx-auto">
