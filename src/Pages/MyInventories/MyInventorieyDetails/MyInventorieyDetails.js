@@ -8,6 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import handleDelete from '../../../hooks/handleDelete';
 
 const MyInventorieyDetails = ({ inventory }) => {
+    // console.log(inventory)
     const [user] = useAuthState(auth);
     // const handleDelete = (id) => {
     //     const proceed = window.confirm("Want to Delete?")
@@ -27,7 +28,7 @@ const MyInventorieyDetails = ({ inventory }) => {
 
     // }
     return (
-        <div className="lg:w-3/5 md:w-4/5 sm:w-full mx-auto mb-2">
+        <div className="lg:w-3/5 md:w-4/5 sm:w-full mx-auto mb-2 shadow-xl rounded-lg my-6">
 
             <div className="p-4 max-w-5/6 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex justify-between items-center mb-4 gap-2">

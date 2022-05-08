@@ -152,7 +152,7 @@ const Login = () => {
 
                                     </div>
                                     {errors?.emailError && <p className='error-message italic'>{errors.emailError}</p>}
-                                    {/* <strong className="text-red-500 text-xs italic">username is require</strong> */}
+
                                 </div>
 
                                 <div className="mb-8">
@@ -175,13 +175,7 @@ const Login = () => {
                                 <div className="mt-8  flex items-center justify-between block text-gray-700 text-sm font-bold mb-2">
                                     <p><input className='mr-2' type="checkbox" />Remember me</p>
                                     <Link to='/login' onClick={resetPassword} className="font-bold text-sm text-orange-500 hover:text-orange-800">Forget password?</Link>
-                                    {/* <p className="text-sm">
-                                        New to Decor Place?
 
-                                        <Link to='/register' onClick={navigateRegister} className="font-bold text-sm text-orange-500 hover:text-orange-800" href="#register">
-                                            Reset Password
-                                        </Link>
-                                    </p> */}
                                 </div>
                                 <div className="mb-4 text-center mb-6 mt-4">
                                     <button className="transition duration-500 bg-[#ee953c]  dark:bg-[#FEC165]  text-white font-bold py-2 px-4 rounded focus:outline-none w-4/6 focus:shadow-outline hover:bg-[#e37d18]">
@@ -208,52 +202,7 @@ const Login = () => {
                 </div>
             </div>
 
-            {/* 
-            <div className=' login-container flex flex-col justify-center border-solid rounded-md shadow-xl'>
-                <form onSubmit={handleSubmit} className='max-w-[400px] w-full mx-auto bg-gray-300 p-8 px-8 rounded-lg'>
-                    <span
-                        className="flex items-center justify-center"
-                    >
-                        <h2 className='text-3xl text-white font-bold text-center '>SIGN IN</h2>
-                        <h2 className='text-2xl text-white font-bold text-center m-1'>to</h2>
 
-                        <Link to="/"><img src={logoName} alt="" className='mt-2' /></Link>
-
-
-
-                    </span>
-                    <div className='flex flex-col text-gray-400 py-2'>
-
-                        <label>Email</label>
-                        <input onChange={handleEmailChange} className='rounded-lg bg-gray-200 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="email" name="email" id="email" placeholder='email' />
-                        {errors?.emailError && <p className='error-message'>{errors.emailError}</p>}
-
-
-                    </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Password</label>
-                        <input onChange={handlePasswordChange} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="password" id="password" placeholder='Password' required />
-                        {errors?.passwordError && <p className='error-message'>{errors.passwordError}</p>}
-
-                    </div>
-                    <div className='flex justify-between text-gray-400 py-2'>
-                        <p className='flex items-center'><input className='mr-2' type="checkbox" />Remember me</p>
-                        <Link to='/login' onClick={resetPassword}>Forget password?</Link>
-                    </div>
-                    <div className='flex justify-between text-gray-400 py-2'>
-                        <div className='flex justify-between text-gray-400 py-2'>
-                            <p>New to Decor Place?</p>
-                            <Link to='/register' onClick={navigateRegister} className='text-primary pe-auto text-decoration-none'>Please Register</Link>
-
-                        </div>
-
-                    </div>
-                    <ToastContainer />
-                    <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 rounded text-white'>Sign in</button>
-                    <SocialLogin></SocialLogin>
-
-                </form>
-            </div> */}
         </>
 
     );

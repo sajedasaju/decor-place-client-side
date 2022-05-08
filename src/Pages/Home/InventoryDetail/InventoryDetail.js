@@ -2,42 +2,56 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useInventoryDetail from './../../../hooks/useInventoryDetail';
 import './InventoryDetail.css'
+import { toast, ToastContainer } from 'react-toastify';
 
 const InventoryDetail = () => {
     const { inventoryId } = useParams();
     const [inventory, setInventory] = useInventoryDetail(inventoryId);
     const handleUpdateUser = (event) => {
-        // console.log(event.target.id)
+        console.log(event.target.id)
         event.preventDefault();
         let quantity = parseInt(inventory.quantity)
-        if (event.target.id === 'delivered') {
-            quantity -= 1;
+        if (quantity <= -1) {
+            toast("sold");
+
         }
-        if (event.target.id === 'restock') {
+        else {
+            if ((event.target.id === 'delivered' || 'minus') && (event.target.id !== 'restock') && (event.target.id !== 'plus')) {
+                quantity -= 1;
+            }
+            if ((event.target.id === 'plus') && (event.target.id !== 'delivered') && (event.target.id !== 'minus') && (event.target.id !== 'restock')) {
+                quantity = quantity + 1;
+            }
+            if (event.target.id === 'restock') {
 
-            const restokeQuantity = parseInt(event.target.quantity.value)
-            quantity += restokeQuantity;
+                const restokeQuantity = parseInt(event.target.quantity.value)
+                console.log(restokeQuantity)
+                quantity += restokeQuantity;
 
-            event.target.quantity.value = ' ';
-        }
+                event.target.quantity.value = ' ';
+            }
+            console.log("q", quantity)
 
-        const updatedUser = { quantity };
+            const updatedUser = { quantity };
 
-        //send data to the server
-        const url = `https://afternoon-fjord-70162.herokuapp.com/inventory/${inventoryId}`
-        fetch(url, {
-            method: 'put',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedUser)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log('success', data);
-                // alert("user added successfully!!")
-
+            //send data to the server
+            const url = `https://afternoon-fjord-70162.herokuapp.com/inventory/${inventoryId}`
+            fetch(url, {
+                method: 'put',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedUser)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    // alert("user added successfully!!")
+
+                })
+        }
+
+
     }
     return (
 
@@ -70,11 +84,11 @@ const InventoryDetail = () => {
                                         <label for="custom-input-number" className="w-full text-gray-700 text-sm font-semibold">Quantity:
                                         </label>
                                         <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                            <button data-action="decrement" className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none" id='plus'>
+                                            <button onClick={handleUpdateUser} data-action="decrement" className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none" id='minus'>
                                                 <span className="m-auto text-2xl font-thin">−</span>
                                             </button>
                                             <input type="number" className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none " name="custom-input-number" value={inventory.quantity}></input>
-                                            <button data-action="increment" className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer" id='plus'>
+                                            <button onClick={handleUpdateUser} id='plus' data-action="increment" className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                                 <span className="m-auto text-2xl font-thin">+</span>
                                             </button>
                                         </div>
@@ -107,6 +121,8 @@ const InventoryDetail = () => {
                     <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </Link>
             </div>
+
+            <ToastContainer></ToastContainer>
 
         </div >
 

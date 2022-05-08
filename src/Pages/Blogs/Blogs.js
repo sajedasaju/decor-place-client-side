@@ -3,7 +3,7 @@ import './Blogs.css'
 
 const Blogs = () => {
     return (
-        <div className="container my-24 px-6 mx-auto drop-shadow-2xl blogs-container flex justify-center items-center">
+        <div className="container md:w-4/6 lg:w-4/6 xl:w-4/6 my-24 px-6 mx-auto drop-shadow-2xl blogs-container flex justify-center items-center">
 
             <section className="mb-32 text-gray-800">
 

@@ -1,6 +1,5 @@
 import { toast, ToastContainer } from 'react-toastify';
 const handleDelete = (id) => {
-
     const proceed = window.confirm("Want to Delete?")
     if (proceed) {
         fetch(`https://afternoon-fjord-70162.herokuapp.com/inventory/${id}`,

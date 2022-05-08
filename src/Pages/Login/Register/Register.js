@@ -79,7 +79,15 @@ const Register = () => {
     const handleRegister = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
-        createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirmPassword.value;
+        if (password !== confirmPassword) {
+            toast("Password didn't matched");
+        }
+        else {
+            createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+        }
+
 
     }
     useEffect(() => {
@@ -172,7 +180,7 @@ const Register = () => {
                                         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                             <svg className="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                         </div>
-                                        <input onChange={handleConfirmPasswordChange} type="password" name="confirm-password" id="confirm-password" placeholder='confirm-password' required className="block pr-10 shadow appearance-none border-2 border-orange-100 rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-amber-100 transition duration-500 ease-in-out" />
+                                        <input onChange={handleConfirmPasswordChange} type="password" name="confirmPassword" id="confirm-password" placeholder='confirm-password' required className="block pr-10 shadow appearance-none border-2 border-orange-100 rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-amber-100 transition duration-500 ease-in-out" />
                                         {errors?.passwordError && <p className='error-message italic'>{errors.passwordError}</p>}
                                     </div>
                                 </div>
