@@ -35,7 +35,7 @@ const Inventory = ({ inventory }) => {
                     </div>
                     <div className="p-1  mt-2 text-center space-x-1 space-y-2 w-full mx-auto">
 
-                        <button onClick={() => { navigateToInventoryDetail(_id) }} className="bg-[#6ca5b3] px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-100 rounded hover:shadow-2xl hover:bg-[#6c949e] w-full align-middle">Update</button>
+                        <button onClick={() => { navigateToInventoryDetail(_id) }} className="bg-[#6ca5b3] hover:bg-[#6c949e] px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-100 rounded hover:shadow-2xl hover:bg-[#6c949e] w-full align-middle">Update</button>
 
                     </div>
 

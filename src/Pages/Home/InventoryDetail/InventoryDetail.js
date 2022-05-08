@@ -116,7 +116,7 @@ const InventoryDetail = () => {
                             <form onSubmit={handleUpdateUser} id='restock' className='flex items-center justify-center w-full'>
                                 <input type="number" placeholder='quantity' name='quantity' className='md:w-80 lg:w-80 w-40' />
                                 <button type="submit"
-                                    className="inline-block px-7 py-3 bg-[#6C949E] hover:bg-[#4d6f77] text-white font-medium text-sm leading-snug uppercase  shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-[#4d6f77] focus:shadow-lg rounded-r active:bg-[#4d6f77] active:shadow-lg transition duration-150 ease-in-out focus:outline-none focus:ring-0 ">Restock</button>
+                                    className="inline-block px-7 py-3 bg-[#6C949E] hover:bg-[#4d6f77] text-white font-medium text-sm leading-snug uppercase  shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-[#4d6f77] focus:shadow-lg rounded-r active:bg-[#4d6f77] active:shadow-lg transition duration-150 ease-in-out focus:outline-none focus:ring-0 bg-[#6ca5b3] hover:bg-[#6c949e] ">Restock</button>
                             </form>
                         </div>
                     </div>

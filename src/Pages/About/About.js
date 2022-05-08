@@ -1,9 +1,8 @@
 import React from 'react';
-import aboutImage3 from '../../../images/banner/aboutImage3.jpg'
+import star from '../../images/icons/star.png'
 
 const About = () => {
     return (
-
         <section className="relative py-12 bg-blueGray-50 bg-[#b8d0c6ac] my-20">
             <div className="items-center flex flex-wrap">
                 <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
@@ -59,6 +58,7 @@ const About = () => {
             </div>
 
         </section>
+
 
     );
 };

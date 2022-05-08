@@ -73,6 +73,13 @@ const Header = () => {
                                 as={Link} to="/home">
                                 Inventory
                             </NavLink>
+                            <NavLink
+                                className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
+                                    :
+                                    "nav-item px-3 mb-2 flex items-center text-yellow-500 hover:border-yellow-500 font-bold hover:border-b-2"}
+                                as={Link} to="/aboutTeam">
+                                About
+                            </NavLink>
 
                             <NavLink
                                 className={({ isActive }) => isActive ? " nav-item px-3 mb-2 flex items-center text-amber-700 border-amber-800 text-lg	 font-bold border-b-2"
